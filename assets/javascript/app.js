@@ -80,12 +80,12 @@ function restartGame() {
     $("#finalScreen").hide();
     
 }
-function startGame() {
+function startQuestion() {
     $("#introScreen").hide();
     $("#questionScreen").show();
     $("#recapScreen").hide();
     $("#finalScreen").hide();
-    pickAQuestion();
+    pickQuestion();
     $("#questionHeader").html("Question # " + (numberOfAnsweredQuestion +1));
     timeLeft = 10;
     $("#timer").html(timeLeft);
@@ -97,16 +97,15 @@ function startGame() {
     timerId = setInterval(timerCountDown ,1000);
 }
 
-function pickAQuestion() {
-    currentQuestion = possibleQuestions[0]; // replace with random question
+function pickQuestion() {
+    currentQuestion = possibleQuestions[numberOfAnsweredQuestion]; // replace with random question
 }
 
 function timerCountDown() {
     timeLeft --;
     $("#timer").html(timeLeft);
     if (timeLeft == 0) {
-        clearInterval(timerId);
-        recap(false);
+        recap(false,true);
     }
 }
 
@@ -114,28 +113,66 @@ function pickAnswer(option) {
    if (currentQuestion.correctAnswer == option) {
     rightAnswer++;
     }
-    numberOfAnsweredQuestion++;
-    recap(currentQuestion.correctAnswer == option);
+    recap(currentQuestion.correctAnswer == option,false);
 
 }
 
-function recap(answeredCorrectly) {
+function recap(answeredCorrectly,timeUp) {
     $("#introScreen").hide();
     $("#questionScreen").hide();
     $("#recapScreen").show();
     $("#finalScreen").hide();
-    if (answeredCorrectly) {
+    numberOfAnsweredQuestion++;
+    clearInterval(timerId);
+    if (timeUp) {
+        $("#rightScoreText").hide();
+        $("#wrongScoreText").hide();
+        $("#timeUpText").show();
+
+    }
+    else if (answeredCorrectly) {
         $("#rightScoreText").show();
         $("#wrongScoreText").hide();
+        $("#timeUpText").hide();
     }
     else {
-         $("#rightScoreText").hide();
+        $("#rightScoreText").hide();
         $("#wrongScoreText").show();
+        $("#timeUpText").hide();
     }
     switch (currentQuestion.correctAnswer) {
         case 1:
-        $("#rightAnswerText").html("")
+        $("#rightAnswerText").html(currentQuestion.option1);
+        break;
+        case 2:
+        $("#rightAnswerText").html(currentQuestion.option2);
+        break;
+        case 3:
+        $("#rightAnswerText").html(currentQuestion.option3);
+        break;
+        case 4:
+        $("#rightAnswerText").html(currentQuestion.option4);
     }
+    $("#recapQuestion").html(currentQuestion.question);
+    setTimeout(leaveRecap, 5000);
+}
+function leaveRecap() {
+    if (possibleQuestions.length == numberOfAnsweredQuestion) {
+        showFinalScreen();
+    }
+    else {
+        startQuestion();
+    }
+
+}
+
+function showFinalScreen() {
+    $("#introScreen").hide();
+    $("#questionScreen").hide();
+    $("#recapScreen").hide();
+    $("#finalScreen").show();
+    $("#finalScoreText").html("Your score is " + rightAnswer +" / " + numberOfAnsweredQuestion);
+    
 }
 
 
@@ -146,7 +183,7 @@ $(document).ready(function(){
 });
 
 $("#startButton").click(function(){
-    startGame();
+    startQuestion();
 });
 
 $("#option1").click(function(){
@@ -165,7 +202,11 @@ $("#option4").click(function(){
     pickAnswer(4);
 });
 
-
+$("#restartButton").click(function(){
+    numberOfAnsweredQuestion = 0;
+    rightAnswer = 0;
+    startQuestion(); 
+});
 
 
 /* notes
