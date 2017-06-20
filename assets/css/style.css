@@ -1,0 +1,107 @@
+body {
+    background-image: url("../images/bggames.jpeg");
+    /*background-image: url("../images/bggames2.jpeg");
+     background-repeat: no-repeat;
+     background-size: 100% 100%;*/
+    font-family: games of thrones;
+    
+}
+
+/*#introScreen {
+     background-image: url("../images/bggames.jpeg");
+     background-size: 100% 100%;
+}*/
+
+@font-face {
+    font-family: 'Games of Thrones'; /*a name to be used later*/
+    src: url('GoT.ttf'); /*URL to font*/
+}
+
+.gameNameBox {
+    font-family: 'Games of Thrones';
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    margin-top: 100px;
+    text-shadow: 2px 2px 5px black;
+    
+}
+
+#startButton {
+    height: 100px;
+    width: 200px;
+    margin-left: 600px;
+    margin-top: 200px;
+    border-top: 1px solid #080808;
+   background: #3f4040;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fffcff), to(#3f4040));
+   background: -webkit-linear-gradient(top, #fffcff, #3f4040);
+   background: -moz-linear-gradient(top, #fffcff, #3f4040);
+   background: -ms-linear-gradient(top, #fffcff, #3f4040);
+   background: -o-linear-gradient(top, #fffcff, #3f4040);
+   padding: 10px 20px;
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #dedede;
+   font-size: 16px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #0d0c0d;
+   background: #0d0c0d;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #f2f2f2;
+   background: #f2f2f2;
+   }
+
+#startText {
+    font-size: 50px;
+    text-shadow: 2px 2px 5px black;
+}
+
+#questionScreen {
+    background-color:grey;
+    height: 300px;
+    margin-top: 20px;
+}
+
+#questionHeader {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    margin-left:20px;
+}
+
+#question {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    margin-left:20px;
+}
+
+#timer {
+    margin-left: 40px;
+    font-size: 70px;
+    color: white;
+    margin-left: 700px;
+    margin-top: 100px;
+    text-shadow: 2px 2px 5px black;
+}
+
+ul {
+    margin-left: 20px;
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px black;
+}
