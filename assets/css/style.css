@@ -27,12 +27,12 @@ body {
     
 }
 
-#startButton {
+#startButton, #restartButton {
     height: 100px;
     width: 200px;
     margin-left: 600px;
     margin-top: 200px;
-    border-top: 1px solid #080808;
+   border-top: 1px solid #080808;
    background: #3f4040;
    background: -webkit-gradient(linear, left top, left bottom, from(#fffcff), to(#3f4040));
    background: -webkit-linear-gradient(top, #fffcff, #3f4040);
@@ -53,6 +53,52 @@ body {
    text-decoration: none;
    vertical-align: middle;
    }
+.startButton:hover {
+   border-top-color: #0d0c0d;
+   background: #0d0c0d;
+   color: #ccc;
+   }
+.startButton:active {
+   border-top-color: #f2f2f2;
+   background: #f2f2f2;
+   }
+
+#startText {
+    font-size: 50px;
+    text-shadow: 2px 2px 5px black;
+}
+
+/*#questionScreen {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}*/
+
+#option1, #option2, #option3, #option4{
+    width: 200px;
+    height: 100px;
+    border-top: 1px solid #080808;
+   background: #3f4040;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fffcff), to(#3f4040));
+   background: -webkit-linear-gradient(top, #fffcff, #3f4040);
+   background: -moz-linear-gradient(top, #fffcff, #3f4040);
+   background: -ms-linear-gradient(top, #fffcff, #3f4040);
+   background: -o-linear-gradient(top, #fffcff, #3f4040);
+   padding: 10px 20px;
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #dedede;
+   font-size: 16px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+
+   }
 .button:hover {
    border-top-color: #0d0c0d;
    background: #0d0c0d;
@@ -66,7 +112,40 @@ body {
 #startText {
     font-size: 50px;
     text-shadow: 2px 2px 5px black;
+
 }
+
+/*#option1 {
+    margin-left: 500px;
+     margin: 40px 200px auto;
+    /*margin-left: auto;
+    margin-top: 80px;
+}
+
+#option2 {
+    margin: 40px 200px auto;
+   /* margin-left: auto;
+    margin-top: 80px;
+}
+
+#option3 {
+    margin-right: 500px;
+    margin: 0 auto;
+   /* margin-left: auto;
+    margin-top: 150px;
+}
+
+#option4 {
+    margin: 0 auto;
+   /* margin-left: auto;
+    margin-top: 150px;
+}*/
+
+#answers {
+    margin-left: 500px;
+    margin-top: 200px;
+}
+
 
 #questionScreen {
     background-color:grey;
@@ -104,4 +183,28 @@ ul {
     color: white;
     font-size: 30px;
     text-shadow: 2px 2px 5px black;
+}
+
+#rightScoreText, #wrongScoreText, #timeUpText, #recapQuestion, #rightAnswerText, #finalScoreText {
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    margin-left: 30px;
+}
+
+#video {
+   width: 480px; 
+   height: 268px;
+   margin-left: 400px;
+}
+
+#finalScoreText {
+    margin-top: 50px;
+}
+#restartText {
+    font-size: 30px;
+}
+#gifContainer {
+    margin-left: 500px;
 }
